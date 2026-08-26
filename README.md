@@ -54,6 +54,8 @@ From v1.1.9b onward, builds that have an OTA channel configured expose:
 Retro Papa -> Settings -> Update Retro Papa
 ```
 
+OTA downloads are **DNS-independent**: once an OTA channel is configured, Retro Papa can download and install updates without requiring working DNS configuration on the PS5.
+
 You can still install a newer beta manually with `RetroPapa-Installer.elf`.
 
 ## Tested on PS5
