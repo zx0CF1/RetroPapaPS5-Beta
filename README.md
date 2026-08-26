@@ -6,22 +6,55 @@ No ROMs, disc images or PlayStation BIOS files are included.
 
 ## Install
 
-### First install or update
+### First install or manual update
 
 1. Run your normal exploit / etaHEN setup.
-2. Open PayloadManager.
-3. Load `RetroPapa-Installer.elf`.
-4. Wait for the Retro Papa notification.
-5. Open Retro Papa from the Games screen.
+2. Load `RetroPapa-Installer.elf` with PayloadManager or another PS5 ELF loader.
+3. Wait for the Retro Papa notification.
+4. Open Retro Papa from the Games screen.
 
-### After a reboot
+From **v1.1.9b onward**, the installer also handles the resident service setup when PayloadManager is detected:
+
+- installs/updates `retro-papa-native.elf` in PayloadManager's managed payload storage;
+- adds `retro-papa-native.elf` to PayloadManager autoload if it is missing;
+- preserves existing payload entries, delays and ordering;
+- does **not** enable or disable PayloadManager autoload globally.
+
+If PayloadManager is not installed, Retro Papa still installs normally.
+
+### After a reboot - v1.1.9b and newer
+
+If PayloadManager is installed **and its autoload feature is enabled**:
 
 1. Run your normal exploit / etaHEN setup.
-2. Open PayloadManager.
-3. Load `RetroPapa-Start.elf`.
-4. Open Retro Papa from Games.
+2. Start PayloadManager as usual.
+3. Let its autoload sequence finish.
+4. Wait for the `Retro Papa is ready` notification.
+5. Open Retro Papa from Games.
 
-You do not need to load the large installer after every reboot. `RetroPapa-Start.elf` only starts the resident Retro Papa service.
+`RetroPapa-Start.elf` is no longer required for the normal PayloadManager setup from v1.1.9b onward.
+
+If PayloadManager is not installed, or if its autoload feature is disabled, start the installed resident with your usual PS5 ELF loader:
+
+```text
+/data/homebrew/RetroPapa/retro-papa-native.elf
+```
+
+Retro Papa does not force-enable PayloadManager autoload if you intentionally disabled it.
+
+### Older beta builds
+
+Betas before **v1.1.9b** used `RetroPapa-Start.elf` after a full reboot. Run the newer `RetroPapa-Installer.elf` once to migrate to the resident/autoload setup.
+
+### In-app updates
+
+From v1.1.9b onward, builds that have an OTA channel configured expose:
+
+```text
+Retro Papa -> Settings -> Update Retro Papa
+```
+
+You can still install a newer beta manually with `RetroPapa-Installer.elf`.
 
 ## Tested on PS5
 
@@ -51,11 +84,13 @@ Mednafen itself supports more systems, but they are not wired into Retro Papa or
 
 Do not treat these as supported yet. A system only moves to the tested list after it works through Retro Papa on real PS5 hardware.
 
-The beta package includes the current ROM folders, PS1 BIOS setup, controls and save instructions in `README.txt`.
+The beta package includes the current ROM folder layout, PS1 BIOS setup, controls and save instructions in `README.txt`.
 
 ## Existing data
 
 The installer is meant to leave your own data alone, including ROMs, BIOS files, saves, states, settings and favorites. Keep a backup of anything important before testing beta builds anyway.
+
+When PayloadManager is present, Retro Papa only adds its own `retro-papa-native.elf` autoload entry if it is missing. Existing PayloadManager entries and delays are preserved.
 
 ## Downloads
 
