@@ -1,6 +1,6 @@
-# Retro Papa PS5 Beta
+# Retro Papa PS5 - Native Retro Frontend & Emulator Launcher (Jailbreak / etaHEN)
 
-Retro Papa is a native retro frontend for jailbroken PS5s. This repo contains beta builds.
+**Retro Papa** is a native retro gaming frontend and resident loader for jailbroken PlayStation 5 consoles. This repo contains beta builds..
 
 No ROMs, disc images or PlayStation BIOS files are included.
 
