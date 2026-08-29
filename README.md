@@ -4,6 +4,21 @@
 
 No ROMs, disc images or PlayStation BIOS files are included.
 
+## Screenshots
+
+<p align="center">
+  <img src="assets/screenshots/ps5-dashboard-integration.jpg" width="100%" alt="Retro Papa PS5 - Native Dashboard Integration and Game Tile for Jailbroken PS5" />
+</p>
+
+| System Selection Menu | Game Library Browser & Details |
+| :---: | :---: |
+| <img src="assets/screenshots/ps5-systems-menu.png" width="100%" alt="Retro Papa PS5 - System Selector Menu for Emulation" /> | <img src="assets/screenshots/ps5-game-browser-details.png" width="100%" alt="Retro Papa PS5 - Game Details and ROM Browser View" /> |
+
+<p align="center">
+  <img src="assets/screenshots/ps5-settings-diagnostics.png" width="100%" alt="Retro Papa PS5 - In-App Settings, Performance Logging and Diagnostics" />
+</p>
+
+
 ## Install
 
 ### First install or manual update
